@@ -1,22 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
-  const [data, setData] = React.useState(null);
+function SearchBar() {
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  const [item, searchItem] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(item);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="text" 
+        placeholder="Hungry???"
+        value={item}
+        onChange={event => searchItem(event.target.value)}
+        required
+      />
+      <button>Search</button>
+    </form>
+  ); 
+}
+
+function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+      <SearchBar/>
     </div>
   );
 }
