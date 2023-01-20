@@ -1,6 +1,17 @@
 import React, {useState} from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import "./style.css";
+
+function Header() {
+  return (
+    <div className="header">
+      <h1>Food Finder App</h1>
+      <h2>Hungry? Let's help you out.</h2>
+      <SearchBar/>
+    </div>
+  )
+}
 
 function SearchBar() {
 
@@ -14,10 +25,11 @@ function SearchBar() {
   return (
     <form onSubmit={handleSubmit}>
       <input 
-        type="text" 
-        placeholder="Hungry???"
+        id="searchbar"
+        type="text"
+        placeholder="Find something tasty"
         value={item}
-        onChange={event => searchItem(event.target.value)}
+        onChange={(event) => searchItem(event.target.value)}
         required
       />
       <button>Search</button>
@@ -29,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar/>
+      <Header/>
     </div>
   );
 }
