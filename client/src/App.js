@@ -23,7 +23,7 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autocomplete="off">
       <input 
         id="searchbar"
         type="text"
