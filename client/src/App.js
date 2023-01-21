@@ -29,9 +29,8 @@ function SearchBar({searchItem}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(item);
-    console.log(typeof(searchItem));
     searchItem(item);
+    update("");
   };
 
   return (
