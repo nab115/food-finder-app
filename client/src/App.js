@@ -3,33 +3,45 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./style.css";
 
-function Header() {
+function Body({item}) {
+  if (!item) return <div></div>;
+
+  else {
+    return (
+      <div>Showing results for : {item}</div>
+    );
+  }
+}
+
+function Header({searchItem}) {
   return (
     <div className="header">
       <h1>Food Finder App</h1>
       <h2>Hungry? Let's help you out.</h2>
-      <SearchBar/>
+      <SearchBar searchItem={searchItem}/>
     </div>
   )
 }
 
-function SearchBar() {
+function SearchBar({searchItem}) {
 
-  const [item, searchItem] = useState("");
+  const [item, update] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(item);
+    console.log(typeof(searchItem));
+    searchItem(item);
   };
 
   return (
-    <form onSubmit={handleSubmit} autocomplete="off">
+    <form onSubmit={handleSubmit} autoComplete="off">
       <input 
         id="searchbar"
         type="text"
         placeholder="Find something tasty"
         value={item}
-        onChange={(event) => searchItem(event.target.value)}
+        onChange={(event) => update(event.target.value)}
         required
       />
       <button>Search</button>
@@ -39,9 +51,14 @@ function SearchBar() {
 
 function App() {
 
+  const [item, update] = useState("");
+
+  const searchItem = (i) => update(i);
+
   return (
     <div className="App">
-      <Header/>
+      <Header searchItem={searchItem}/>
+      <Body item={item}/>
     </div>
   );
 }
