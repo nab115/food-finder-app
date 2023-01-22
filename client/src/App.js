@@ -1,14 +1,21 @@
 import React, {useState} from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "./style.css";
+import search from "./fetch.js";
 
-function Body({item}) {
-  if (!item) return <div></div>;
+function Body(props) {
+
+  if (!props.item) return <div></div>;
 
   else {
     return (
-      <div>Showing results for : {item}</div>
+      <div>
+        Showing results for : {props.item}
+        {props.results.restaurants.map(restaurant => <p>{restaurant}</p>)}
+        {/* <div>
+          {props.results.restaurants[0]}
+        </div> */}
+      </div>
     );
   }
 }
@@ -49,15 +56,17 @@ function SearchBar({searchItem}) {
 }
 
 function App() {
+  const [data, update] = useState({item: "", results: []});
 
-  const [item, update] = useState("");
-
-  const searchItem = (i) => update(i);
+  const searchItem = async (i) => {
+    const value = await search();
+    update({item: i, results: value});
+  };
 
   return (
     <div className="App">
       <Header searchItem={searchItem}/>
-      <Body item={item}/>
+      <Body item={data.item} results={data.results}/>
     </div>
   );
 }

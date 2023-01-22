@@ -2,12 +2,16 @@ const express = require('express')
 const app = express()
 const port = 3001
 
+testData = {
+  restaurants: ["Slab", "Redhook"]
+}
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
+app.get("/search", (req, res) => {
+  res.json(testData);
 });
 
 app.listen(port, () => {
