@@ -3,7 +3,7 @@ const app = express()
 const port = 3001
 
 testData = {
-  restaurants: ["Slab", "Redhook"]
+  restaurants: ["Slab", "Redhook", "Pelicana Chicken"]
 }
 
 app.get('/', (req, res) => {

@@ -3,21 +3,28 @@ import "./App.css";
 import "./style.css";
 import search from "./fetch.js";
 
-function Body(props) {
+function Body({item, results}) {
 
-  if (!props.item) return <div></div>;
+  if (!item) return <div></div>;
 
   else {
     return (
-      <div>
-        Showing results for : {props.item}
-        {props.results.restaurants.map(restaurant => <p>{restaurant}</p>)}
-        {/* <div>
-          {props.results.restaurants[0]}
-        </div> */}
+      <div id="results">
+        <p className="bold-text">Showing results for : {item}</p>
+        <div id="restaurants">
+        {results.restaurants.map(restaurant => <RestaurantCard restaurant={restaurant} />)}
+        </div>
       </div>
     );
   }
+}
+
+function RestaurantCard({restaurant}) {
+  return (
+    <div className="restaurantCard">
+    {restaurant}
+    </div>
+  )
 }
 
 function Header({searchItem}) {
