@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import "./App.css";
 import "./style.css";
 import search from "./fetch.js";
+import Header from "./Header.js"
 
-function Body({item, results}) {
+function Results({item, results}) {
 
   if (!item) return <div></div>;
 
@@ -22,44 +23,9 @@ function Body({item, results}) {
 function RestaurantCard({restaurant}) {
   return (
     <div className="restaurantCard">
-    {restaurant}
+    <h2 className="restaurantName">{restaurant}</h2>
     </div>
   )
-}
-
-function Header({searchItem}) {
-  return (
-    <div className="header">
-      <h1>Food Finder App</h1>
-      <h2>Hungry? Let's help you out.</h2>
-      <SearchBar searchItem={searchItem}/>
-    </div>
-  )
-}
-
-function SearchBar({searchItem}) {
-
-  const [item, update] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    searchItem(item);
-    update("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <input 
-        id="searchbar"
-        type="text"
-        placeholder="Find something tasty"
-        value={item}
-        onChange={(event) => update(event.target.value)}
-        required
-      />
-      <button>Search</button>
-    </form>
-  ); 
 }
 
 function App() {
@@ -73,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header searchItem={searchItem}/>
-      <Body item={data.item} results={data.results}/>
+      <Results item={data.item} results={data.results}/>
     </div>
   );
 }

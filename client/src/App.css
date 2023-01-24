@@ -5,9 +5,12 @@
   padding-top: 50px;
 }
 
+.searchForm {
+  height: 35px;
+}
 #searchbar {
   width: 25%;
-  height: 30px;
+  height: 100%;
   border-style: none;
   border-radius: 20px;
   padding-left: 40px;
@@ -19,18 +22,30 @@
 
 #results {
   margin: auto;
-  width: 90%;
+  width: 65%;
+}
+
+@media screen and (max-width: 1024px) {
+  #results {
+    margin: auto;
+    width: 90%;
+  }
 }
 
 .restaurantCard {
-  height: 200px;
-  width : 30%;
+  height: 300px;
+  width : 350px;
   outline: auto;
   margin: 0px 50px 25px 0px;
   display: inline-block;
-  text-align: center;
+}
+
+.restaurantName {
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 #restaurants {
   margin-top: 100px;
+  display: inline-block;
 }
