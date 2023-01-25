@@ -38,14 +38,40 @@
   outline: auto;
   margin: 0px 50px 25px 0px;
   display: inline-block;
+  overflow: auto;
+}
+
+.restaurantCardContent {
+  margin: 15px;
 }
 
 .restaurantName {
-  margin-left: 15px;
-  margin-top: 15px;
+  margin: 0px 0px 10px 0px;
 }
 
 #restaurants {
   margin-top: 100px;
   display: inline-block;
+}
+
+.item {
+  box-shadow: 0px -1px 0 #000;
+  padding-top: 10px;
+}
+
+.itemName {
+  text-align: left;
+  width: 80%;
+  display: inline-block;
+}
+
+.itemPrice {
+  text-align: right;
+  width: 20%;
+  display: inline-block;
+}
+
+.itemDescription {
+  width: 100%;
+  font-style: italic;
 }
