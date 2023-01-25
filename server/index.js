@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const port = 3001;
 
 const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri);
-const dbName = "menu-items";
+const dbName = "Restaurants";
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 testData = [
   {
@@ -69,15 +72,21 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 })
 
-app.get("/search", async (req, res) => {
+app.post("/search", async (req, res) => {
+
+  var restaurants = [];
+  console.log(req.body.item);
   await client.connect();
-
   const db = client.db(dbName);
-  const col = db.collection("items");
-  const myDoc = await col.findOne();
-  console.log(myDoc);
+  const col = db.collection("restaurants");
+  const cursor = col.find({'items.name' : req.body.item});
+  await cursor.forEach((r) => {
+    console.log(r);
+    restaurants.push(r)
+  });
+  console.log(restaurants);
+  res.json(restaurants);
 
-  res.json(testData);
 });
 
 app.listen(port, () => {

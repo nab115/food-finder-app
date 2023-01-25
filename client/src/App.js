@@ -45,7 +45,7 @@ function App() {
   const [data, update] = useState({item: "", results: []});
 
   const searchItem = async (i) => {
-    const value = await search();
+    const value = await search(i);
     console.log(value);
     update({item: i, results: value});
   };
