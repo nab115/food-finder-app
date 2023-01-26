@@ -8,6 +8,14 @@ function Results({item, results}) {
 
   if (!item) return <div></div>;
 
+  else if (results.length == 0) {
+    return (
+      <div id="results">
+        <p className="bold-text">No results found for : {item}</p>
+      </div>
+    );
+  }
+
   else {
     return (
       <div id="results">
