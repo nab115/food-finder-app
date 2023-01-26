@@ -79,12 +79,11 @@ app.post("/search", async (req, res) => {
   await client.connect();
   const db = client.db(dbName);
   const col = db.collection("restaurants");
-  const cursor = col.find({'items.name' : req.body.item});
+  const cursor = col.find({'items.name' : {'$regex' : req.body.item, '$options' : 'i'}});
   await cursor.forEach((r) => {
     console.log(r);
     restaurants.push(r)
   });
-  console.log(restaurants);
   res.json(restaurants);
 
 });
