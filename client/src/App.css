@@ -6,13 +6,15 @@
 }
 
 .searchForm {
-  height: 35px;
+  height: 50px;
 }
+
 #searchbar {
-  width: 25%;
+  width: 30%;
   height: 100%;
+  font-size: 18px;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 10px;
   padding-left: 40px;
   background-image: url('../public/sushi.jpg');
   background-repeat: no-repeat;
@@ -41,12 +43,12 @@
   overflow: auto;
 }
 
-.restaurantCardContent {
-  margin: 15px;
+.restaurantHeader {
+  margin-bottom: 20px;
 }
 
-.restaurantName {
-  margin: 0px 0px 10px 0px;
+.restaurantCardContent {
+  margin: 15px;
 }
 
 #restaurants {

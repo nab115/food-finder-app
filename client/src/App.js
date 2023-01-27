@@ -32,7 +32,10 @@ function RestaurantCard({restaurant}) {
   return (
     <div className="restaurantCard">
       <div className="restaurantCardContent">
-        <h3 className="restaurantName">{restaurant.name}</h3>
+        <div className="restaurantHeader">
+          <h3 className="no-margin">{restaurant.name}</h3>
+          <p className="no-margin">{restaurant.address}</p>
+        </div>
         {restaurant.items.map(item => <Item item={item} />)}
       </div>
     </div>
