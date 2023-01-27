@@ -9,6 +9,7 @@ testData = [
     {
       name: "Slab Sandwich"
       , address : "1201 10th Ave, Seattle, WA 98122"
+      , city : "Seattle"
       , items : [
         {
           name: "Pork Belly Sandwich"
@@ -30,6 +31,7 @@ testData = [
     , {
       name: "Redhook Brewlab"
       , address : "714 E Pike St. Seattle, WA 98122"
+      , city : "Seattle"
       , items : [
         {
           name: "Cheeseburger"
@@ -46,6 +48,7 @@ testData = [
     , {
       name: "Ayutthaya Thai Restaurant and Bar"
       , address : "727 East Pike Street, Seattle, WA 98122"
+      , city: "Seattle"
       , items : [
         {
           name: "PAD KHEE MAO"
@@ -77,6 +80,10 @@ async function run() {
     // cursor.forEach(console.dir);
 
     // const cursor = await col.deleteOne({name: "Burratta Sandwich"});
+
+    // await cursor.forEach(console.dir);
+
+    // const cursor = col.find({name: 'Slab Sandwich'}).project({items: { $slice: -1}});
 
     // await cursor.forEach(console.dir);
 
