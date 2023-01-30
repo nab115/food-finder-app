@@ -3,8 +3,6 @@ const {searchData} = require('./parser.js');
 const app = express();
 const port = 3001;
 
-// import searchData from './parser';
-
 const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
 
