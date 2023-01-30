@@ -4,7 +4,7 @@ async function search(item) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({item: item}),
+        body: JSON.stringify({item: item, city: "Seattle"}),
     })
     return res.json();
 }
