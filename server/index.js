@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {searchData} = require('./parser.js');
 const app = express();
-const port = `0.0.0.0:$PORT`;
+const port = process.env.PORT;
 
 const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
