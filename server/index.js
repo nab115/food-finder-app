@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {searchData} = require('./parser.js');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
@@ -14,11 +14,10 @@ const col = db.collection("restaurants");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-  res.json("Testing Deployment");
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 })
 
 app.post("/search", async (req, res) => {
