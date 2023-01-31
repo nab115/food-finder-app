@@ -1,20 +1,28 @@
 const express = require('express');
+const { MongoClient } = require("mongodb");
+
 const path = require('path');
 const {searchData} = require('./parser.js');
-const app = express();
-const port = process.env.PORT || 3001;
 
-const { MongoClient } = require("mongodb");
+
+
+const port = process.env.PORT || 3001;
 const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri);
+client.connect();
 const dbName = "Restaurants";
 const db = client.db(dbName);
 const col = db.collection("restaurants");
 
+
+const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
+// console.log(process.env);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
@@ -22,7 +30,6 @@ app.get('/', (req, res) => {
 
 app.post("/search", async (req, res) => {
   var restaurants = [];
-  await client.connect();
   const cursor = col.find({'city' : req.body.city});
   await cursor.forEach((r) => {
     restaurants.push(r)
