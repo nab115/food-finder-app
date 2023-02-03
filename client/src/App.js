@@ -11,7 +11,12 @@ function Results({item, results}) {
   else if (results.length === 0) {
     return (
       <div id="results">
-        <p className="bold-text">No results found for : {item}</p>
+        <p className="bold-text">No results found for : {item}
+        <br></br>
+        <br></br>
+        Note : this application is still in development, and is using very limited test data.
+        To view some results, try "pizza" or "sandwich"
+        </p>
       </div>
     );
   }
