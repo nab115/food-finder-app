@@ -2,18 +2,20 @@ function isMatch(item, name) {
     return name.includes(item);
 }
 
-function searchData(item, restaurants) {
+function searchData(target, restaurants) {
     results = [];
     restaurants.forEach((restaurant) => {
-        var match = false;
-        for (var i = 0; i < restaurant.items.length; i++) {
-            if (!isMatch(item, restaurant.items[i].name)) {
-                restaurant.items.splice(i, 1);
-            }
-            else match = true;
-        }
+        var matching_items = [];
 
-        if (match) results.push(restaurant);
+        restaurant.items.forEach((item) => {
+            if (isMatch(target, item.name)) {
+                matching_items.push(item);
+            }
+        })
+
+        restaurant.items = matching_items;
+        console.log(restaurant);
+        if (matching_items.length != 0) results.push(restaurant);
     })
 
     return results;
