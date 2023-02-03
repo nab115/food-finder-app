@@ -1,16 +1,12 @@
 const express = require('express');
+
 const path = require('path');
+const {col} = require('./db.js')
 const {searchData} = require('./parser.js');
-const app = express();
+
 const port = process.env.PORT || 3001;
 
-const { MongoClient } = require("mongodb");
-const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
-
-const client = new MongoClient(uri);
-const dbName = "Restaurants";
-const db = client.db(dbName);
-const col = db.collection("restaurants");
+const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,13 +18,11 @@ app.get('/', (req, res) => {
 
 app.post("/search", async (req, res) => {
   var restaurants = [];
-  await client.connect();
   const cursor = col.find({'city' : req.body.city});
   await cursor.forEach((r) => {
     restaurants.push(r)
   });
-  
-  console.log(restaurants);
+
   res.json(searchData(req.body.item, restaurants));
 
 });

@@ -2,23 +2,22 @@ function isMatch(item, name) {
     return name.includes(item);
 }
 
+function searchData(target, restaurants) {
+    results = [];
+    restaurants.forEach((restaurant) => {
+        var matching_items = [];
 
-module.exports = {
-    searchData: function (item, restaurants) {
-
-        results = [];
-        restaurants.forEach((restaurant) => {
-            var match = false;
-            for (var i = 0; i < restaurant.items.length; i++) {
-                if (!isMatch(item, restaurant.items[i].name)) {
-                    restaurant.items.splice(i, 1);
-                }
-                else match = true;
+        restaurant.items.forEach((item) => {
+            if (isMatch(target.toLowerCase(), item.name.toLowerCase())) {
+                matching_items.push(item);
             }
-
-            if (match) results.push(restaurant);
         })
 
-        return results;
-    }
-};
+        restaurant.items = matching_items;
+        if (matching_items.length != 0) results.push(restaurant);
+    })
+
+    return results;
+}
+
+module.exports.searchData = searchData;
