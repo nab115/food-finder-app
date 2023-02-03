@@ -8,13 +8,12 @@ function searchData(target, restaurants) {
         var matching_items = [];
 
         restaurant.items.forEach((item) => {
-            if (isMatch(target, item.name)) {
+            if (isMatch(target.toLowerCase(), item.name.toLowerCase())) {
                 matching_items.push(item);
             }
         })
 
         restaurant.items = matching_items;
-        console.log(restaurant);
         if (matching_items.length != 0) results.push(restaurant);
     })
 
