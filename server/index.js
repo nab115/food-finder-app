@@ -12,12 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-})
 
-app.get('/search', (req, res) => {
-  res.json({message: "Hello, World!"});
+// using '*' to route any unhandled requests back to the frontend router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 })
 
 app.post("/search", async (req, res) => {
