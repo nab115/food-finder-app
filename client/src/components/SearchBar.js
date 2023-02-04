@@ -2,11 +2,11 @@ import React, {useState} from "react";
 
 function SearchBar({inputHandler, placeholder}) {
   
-    const [item, update] = useState("");
+    const [input, update] = useState("");
   
     const submitHandler = (e) => {
       e.preventDefault();
-      inputHandler(item);
+      inputHandler(input);
       update("");
     };
   
@@ -16,7 +16,7 @@ function SearchBar({inputHandler, placeholder}) {
           id="searchbar"
           type="text"
           placeholder={placeholder}
-          value={item}
+          value={input}
           onChange={(event) => update(event.target.value)}
           required
         />
