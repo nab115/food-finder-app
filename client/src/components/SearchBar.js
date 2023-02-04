@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function SearchBar({inputHandler}) {
+function SearchBar({inputHandler, placeholder}) {
   
     const [item, update] = useState("");
   
@@ -15,11 +15,11 @@ function SearchBar({inputHandler}) {
         <input 
           id="searchbar"
           type="text"
-          placeholder="Find something tasty"
+          placeholder={placeholder}
           value={item}
           onChange={(event) => update(event.target.value)}
           required
-        /> 
+        />
       </form>
     );
 }

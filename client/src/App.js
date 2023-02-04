@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import "./style.css";
 import SearchContainer from "./components/SearchContainer.js"
+import WelcomeContainer from "./components/WelcomeContainer";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Welcome />}></Route>
+          <Route path="/" element={<WelcomeContainer />}></Route>
           <Route path="/search" element={<SearchContainer />}></Route>
         </Routes>
       </div>
@@ -19,10 +20,3 @@ function App() {
 }
 
 export default App;
-
-const Welcome = () => (
-  <Fragment>
-    <h1>Welcome to my app!!!</h1>
-    <Link to="/search"><button>Search</button></Link>
-  </Fragment>
-  );
