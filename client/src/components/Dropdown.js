@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Dropdown({inputHandler, placeholder}) {
+function Dropdown({inputHandler}) {
   
     const [input, update] = useState("");
   
@@ -10,17 +10,15 @@ function Dropdown({inputHandler, placeholder}) {
     };
   
     return (
-        <div><p>{input}</p>
       <form onSubmit={submitHandler} autoComplete="off" className="searchForm">
         <select 
             name="locations"
             onChange={(event) => update(event.target.value)}>
-          <option value="" disabled selected>select your location</option>
-          <option value="seattle">Seattle, WA</option>
-          <option value="philadelphia">Philadelphia, PA</option>
-        </select>
+          <option value="" selected disabled>select your location</option>
+          <option value="Seattle">Seattle, WA</option>
+          <option value="Philadelphia">Philadelphia, PA</option>
+        </select><button></button>
       </form>
-      </div>
     );
 }
 
