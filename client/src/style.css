@@ -1,0 +1,16 @@
+h1 {
+    margin: 0px;
+    font-size: 50px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+button {
+    height: 100%;
+}
