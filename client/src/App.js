@@ -3,16 +3,24 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import "./style.css";
 import SearchContainer from "./components/SearchContainer.js"
-import WelcomeContainer from "./components/WelcomeContainer";
+import WelcomeContainer from "./components/WelcomePage";
 
 function App() {
+
+  const [location, update] = useState("");
+
+  const setLocation = (location) => {
+    console.log(location + "From App.js");
+    update(location);
+    window.location.href = "/search";
+  }
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<WelcomeContainer />}></Route>
-          <Route path="/search" element={<SearchContainer />}></Route>
+          <Route path="/" element={<WelcomeContainer setLocation={setLocation}/>}></Route>
+          <Route path="/search" element={<SearchContainer location={location}/>}></Route>
         </Routes>
       </div>
     </Router>
