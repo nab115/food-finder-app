@@ -1,10 +1,11 @@
-async function search(item) {
+async function search(item, city) {
+    console.log(city);
     const res = await fetch('/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({item: item, city: "Seattle"}),
+        body: JSON.stringify({item: item, city: city}),
     })
     return res.json();
 }
