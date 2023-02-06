@@ -12,6 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
+const locations = [
+  {value: 'Seattle', display: 'Seattle, WA'}
+  , {value: 'Philadelphia', display: 'Philadelphia, PA'}
+]
+
 
 // using '*' to route any unhandled requests back to the frontend router
 app.get('*', (req, res) => {
@@ -27,6 +32,10 @@ app.post("/search", async (req, res) => {
 
   res.json(searchData(req.body.item, restaurants));
 
+});
+
+app.post("/locations", async (req, res) => {
+  res.json(locations);
 });
 
 app.listen(port, () => {

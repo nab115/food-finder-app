@@ -1,4 +1,4 @@
-async function search(item, city) {
+export async function search(item, city) {
     console.log('Searching for ' + item + ' near ' + city);
     const res = await fetch('/search', {
         method: 'POST',
@@ -6,6 +6,13 @@ async function search(item, city) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({item: item, city: city}),
+    })
+    return res.json();
+}
+
+export async function retreiveLocations() {
+    const res = await fetch('/locations', {
+        method: 'POST'
     })
     return res.json();
 }
@@ -18,6 +25,3 @@ async function search(item, city) {
 //     fetch('/search')
 //         .then((res) => {return res.json()});
 // }
-
-
-export default search;

@@ -3,16 +3,21 @@ import Dropdown from "./Dropdown";
 
 function WelcomeContainer({setLocation}) {
 
-  const inputHandler = (location) => {
-    console.log(location + "From Welcome.js");
+  const [location, update] = useState('');
+
+  const submitHandler = (e) => {
+    e.preventDefault();
     setLocation(location);
-  }
+  };
 
     return (
       <div className="welcome">
         <h1>Food Finder App</h1>
         <h2>Where are you located?</h2>
-        <Dropdown inputHandler={inputHandler} placeholder="Enter your city"/>
+        <form onSubmit={submitHandler}>
+          <Dropdown inputHandler={update} placeholder="select your location"/>
+          <button></button>
+        </form>
       </div>
     )
 }
