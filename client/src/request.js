@@ -1,0 +1,27 @@
+export async function search(item, city) {
+    console.log('Searching for ' + item + ' near ' + city);
+    const res = await fetch('/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({item: item, city: city}),
+    })
+    return res.json();
+}
+
+export async function retreiveLocations() {
+    const res = await fetch('/locations', {
+        method: 'POST'
+    })
+    return res.json();
+}
+
+
+// unsure why the above works but this does not
+
+// async function search() {
+
+//     fetch('/search')
+//         .then((res) => {return res.json()});
+// }
