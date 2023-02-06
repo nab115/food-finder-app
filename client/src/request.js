@@ -1,5 +1,5 @@
 async function search(item, city) {
-    console.log(city);
+    console.log('Searching for ' + item + ' near ' + city);
     const res = await fetch('/search', {
         method: 'POST',
         headers: {

@@ -7,12 +7,14 @@ import WelcomeContainer from "./components/WelcomePage";
 
 function App() {
 
-  const [location, update] = useState("");
+  const [location, update] = useState(localStorage.getItem('location') || '');
+
+  // console.log(location);
 
   const setLocation = (location) => {
-    console.log(location + "From App.js");
-    update(location);
-    window.location.href = "/search";
+    console.log(location + 'From App.js');
+    localStorage.setItem('location', location);
+    window.location.href = '/search';
   }
 
   return (
