@@ -14,13 +14,11 @@ class Dropdown extends React.Component {
 
   onSelect = (input)=> {
     this.props.inputHandler(input);
-    console.log(input);
     this.setState({selected: input});
   }
 
   async componentDidMount() {
     this.setState({options: await retreiveLocations()});
-    console.log(this.state.options);
   }
 
   render () {

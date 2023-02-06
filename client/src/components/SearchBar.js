@@ -1,26 +1,27 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
-function SearchBar({inputHandler, placeholder}) {
+function SearchBar({inputHandler, placeholder, trigger}) {
   
-    const [input, update] = useState("");
-  
-    const submitHandler = (e) => {
-      e.preventDefault();
+    const [input, update] = useState('');
+
+    const onChange = (input) => {
+      update(input);
       inputHandler(input);
-      update("");
-    };
+    }
+
+    useEffect(() => {
+      if (trigger) update('');
+    })
   
     return (
-      <form onSubmit={submitHandler} autoComplete="off" className="searchForm">
         <input 
-          id="searchbar"
-          type="text"
+          id='searchbar'
+          type='text'
           placeholder={placeholder}
           value={input}
-          onChange={(event) => update(event.target.value)}
+          onChange={(event) => onChange(event.target.value)}
           required
         />
-      </form>
     );
 }
 

@@ -7,15 +7,20 @@ import Results from './Results.js';
 
 function SearchContainer({location}) {
 
-    const [data, update] = useState({ item: '', results: [], location: location });
+    const [data, update] = useState({ item: '', searchItem: '', results: [], location: location, trigger: 0});
 
-    const searchItem = async (i) => {
-      const value = await search(i, data.location);
-      update({item: i, results: value});
+    const submitHandler = async (e) => {
+      e.preventDefault();
+      const value = await search(data.item, data.location);
+      update({...data, searchItem: data.item, results: value, trigger: 1});
     };
+
+    const updateItem = (input) => {
+      update({ ...data, item: input, trigger: 0});
+    }
   
-    const changeLocation = (input) => {
-      update({location: input})
+    const updateLocation = (input) => {
+      update({...data, location: input, trigger: 0})
     }
 
     return (
@@ -23,10 +28,13 @@ function SearchContainer({location}) {
       <div className="header">
         <h1>Food Finder App</h1>
         <h2>Hungry? Let's help you out.</h2>
-        <SearchBar inputHandler={searchItem} placeholder="Find something tasty"/>
-        <Dropdown inputHandler={changeLocation} selected={location} placeholder='update your location'/>
+        <form onSubmit={submitHandler} autoComplete="off" className="searchForm">
+          <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
+          <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
+          <button></button>
+        </form>
       </div>
-      <Results item={data.item} results={data.results}/>
+      <Results item={data.searchItem} results={data.results}/>
     </Fragment>
     );
 }
