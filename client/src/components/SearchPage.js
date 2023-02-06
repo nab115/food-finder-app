@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import Dropdown from "./Dropdown";
 import Results from './Results.js';
 
-function SearchContainer({ location }) {
+function SearchPage({ location }) {
 
     const [data, update] = useState({ item: '', searchItem: '', results: [], location: location, trigger: 0});
 
@@ -26,13 +26,16 @@ function SearchContainer({ location }) {
 
     return (
     <Fragment>
-        <div className="header">
-            <h1>Food Finder App</h1>
+        <div className='search header'>
             <h2>Hungry? Let's help you out.</h2>
-            <form onSubmit={submitHandler} autoComplete="off" className="searchForm">
-                <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
-                <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
-                <button></button>
+            <form onSubmit={submitHandler} autoComplete="off" className="search-form">
+                <span className='search-dropdown'>
+                    <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
+                </span>
+                <span className='search-input'>
+                    <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
+                </span>
+                <button className='search-button'>Go</button>
             </form>
         </div>
         <Results item={data.searchItem} results={data.results}/>
@@ -40,4 +43,4 @@ function SearchContainer({ location }) {
     );
 }
 
-export default SearchContainer
+export default SearchPage;

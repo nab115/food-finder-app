@@ -25,7 +25,9 @@ class Dropdown extends React.Component {
     return <select 
         name="locations"
         onChange={(event) => this.onSelect(event.target.value)}
-        value={this.state.selected}>
+        value={this.state.selected}
+        className="dropdown"
+        required>
       <option value='' disabled>{this.props.placeholder}</option>
       {this.state.options.map(op => <option value={op.value}>{op.display}</option>)}
     </select>
