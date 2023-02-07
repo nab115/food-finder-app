@@ -23,11 +23,15 @@ body {
     --button-width-m: 30px;
 
     --font-size: 18px;
+    --font-size-input-lg: 1em;
+    --font-size-input-sm: 0.8em;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 500px) {
     #root {
         --font-size: 16px;
+        --font-size-input-lg: 1.25em;
+        --font-size-input-sm: 1em;
     }
 }
 

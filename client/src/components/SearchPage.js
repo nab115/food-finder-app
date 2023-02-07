@@ -35,7 +35,7 @@ function SearchPage({ location }) {
                     <span className='search-input'>
                         <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
                     </span>
-                    <button className='search-button'>Go</button>
+                    <button type='submit' className='search-button'>Go</button>
                 </form>
             </div>
         </div>
