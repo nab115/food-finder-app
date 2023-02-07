@@ -16,6 +16,9 @@ body {
     height: 100%;
     --color-theme: rgba(200, 15, 15, 0.888);
 
+    --color-light: white;
+    --color-dark: black;
+
     --container-width-s: 350px;
     --container-width-lg: 1024px;
     --container-width-xlg: 1280px;
@@ -56,6 +59,7 @@ button {
     border: none;
     padding: 0;
     vertical-align: top;
+    color: var(--color-dark);
 }
 
 button:hover {
