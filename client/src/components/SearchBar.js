@@ -15,7 +15,7 @@ function SearchBar({inputHandler, placeholder, trigger}) {
   
     return (
         <input 
-          id='searchbar'
+          className='searchbar'
           type='text'
           placeholder={placeholder}
           value={input}

@@ -13,11 +13,11 @@ function WelcomePage({setLocation}) {
     return (
       <div className='welcome'>
         <div className='welcome-content'>
-            <h1>Food Finder App</h1>
-            <h2>Where are you located?</h2>
-            <form onSubmit={submitHandler} className='input-container'>
+            <h1>Hungry? Let's help you out.</h1>
+            <h3>Where are you located?</h3>
+            <form onSubmit={submitHandler} className='form-container'>
                 <span className="welcome-dropdown">
-                    <Dropdown inputHandler={update} placeholder='select your location'/>
+                    <Dropdown inputHandler={update} placeholder='select your city'/>
                 </span>
                 <button className="welcome-button">Go</button>
             </form>

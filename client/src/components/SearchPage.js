@@ -25,21 +25,22 @@ function SearchPage({ location }) {
     }
 
     return (
-    <Fragment>
-        <div className='search header'>
-            <h2>Hungry? Let's help you out.</h2>
-            <form onSubmit={submitHandler} autoComplete="off" className="search-form">
-                <span className='search-dropdown'>
-                    <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
-                </span>
-                <span className='search-input'>
-                    <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
-                </span>
-                <button className='search-button'>Go</button>
-            </form>
+    <div className='search'>
+        <div className='header'>
+            <div className='input-container'>
+                <form onSubmit={submitHandler} autoComplete="off" className="form-container">
+                    <span className='search-dropdown'>
+                        <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
+                    </span>
+                    <span className='search-input'>
+                        <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
+                    </span>
+                    <button className='search-button'>Go</button>
+                </form>
+            </div>
         </div>
         <Results item={data.searchItem} results={data.results}/>
-    </Fragment>
+    </div>
     );
 }
 
