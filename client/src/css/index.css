@@ -16,6 +16,9 @@ body {
     height: 100%;
     --color-theme: rgba(200, 15, 15, 0.888);
 
+    --color-light: white;
+    --color-dark: black;
+
     --container-width-s: 350px;
     --container-width-lg: 1024px;
     --container-width-xlg: 1280px;
@@ -23,11 +26,15 @@ body {
     --button-width-m: 30px;
 
     --font-size: 18px;
+    --font-size-input-lg: 1em;
+    --font-size-input-sm: 0.8em;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 500px) {
     #root {
         --font-size: 16px;
+        --font-size-input-lg: 1.25em;
+        --font-size-input-sm: 1em;
     }
 }
 
@@ -52,6 +59,7 @@ button {
     border: none;
     padding: 0;
     vertical-align: top;
+    color: var(--color-dark);
 }
 
 button:hover {

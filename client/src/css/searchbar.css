@@ -10,4 +10,5 @@
     background-position: 5px 50%;
     background-size: 30px, auto, contain;
     border-right: 1px solid black;
+    color: var(--color-dark);
 }

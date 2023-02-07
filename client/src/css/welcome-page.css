@@ -2,9 +2,9 @@
     height: 100%;
     display: flex;
     font-size: var(--font-size);
-    color: rgb(255, 255, 255);
+    color: var(--color-light);
     background-color: var(--color-theme);
-    --font-size-input: 0.9em;
+    --font-size-input: var(--font-size-input-lg);
     --input-width: 50%;
     --input-height: 1.75em;
 }
