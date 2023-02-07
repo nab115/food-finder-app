@@ -3,7 +3,8 @@
     height: 100%;
     font-family: inherit;
     font-size: inherit;
-    color: var(--color-dark);
+    font-weight: inherit;
+    color: inherit;
     background-color: transparent;
     border: none;
     border-right: 1px solid var(--border-color-light);
