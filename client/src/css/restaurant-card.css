@@ -1,0 +1,45 @@
+.restaurantCard {
+    height: 300px;
+    width : 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 25px;
+    display: inline-block;
+    overflow: auto;
+    text-align: left;
+  }
+  
+  .restaurantHeader {
+    margin-bottom: 20px;
+  }
+  
+  .restaurantCardContent {
+    margin: 15px;
+  }
+  
+  #restaurants {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .item {
+    box-shadow: 0px -1px 0 #000;
+    padding-top: 10px;
+  }
+  
+  .itemName {
+    text-align: left;
+    width: 80%;
+    display: inline-block;
+  }
+  
+  .itemPrice {
+    text-align: right;
+    width: 20%;
+    display: inline-block;
+  }
+  
+  .itemDescription {
+    width: 100%;
+    font-style: italic;
+  }

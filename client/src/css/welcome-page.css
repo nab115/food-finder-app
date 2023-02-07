@@ -1,0 +1,43 @@
+.welcome {
+    height: 100%;
+    display: flex;
+    font-size: var(--font-size);
+    color: rgb(255, 255, 255);
+    background-color: var(--color-theme);
+    --font-size-input: 0.9em;
+    --input-width: 50%;
+    --input-height: 1.75em;
+}
+
+.welcome-image {
+    background-image: url('../../public/agio.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* display: none; */
+}
+
+@media screen and (max-width: 500px) {
+    .welcome {
+        flex-direction: column;
+    }
+}
+
+.welcome-content {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    margin: auto;
+    padding: 1.5rem 1rem;
+}
+
+.welcome-dropdown {
+    width: 85%;
+    height: 100%;
+    display: inline-block;
+}
+
+.welcome-button {
+    width: 15%;
+}

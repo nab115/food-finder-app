@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 const locations = [
   {value: 'Seattle', display: 'Seattle, WA'}
   , {value: 'Philadelphia', display: 'Philadelphia, PA'}
+  , {value: 'test', display: 'Really really long name'}
 ]
 
 

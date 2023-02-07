@@ -29,13 +29,6 @@ button:hover {
     background-color: rgb(231, 229, 229);
 }
 
-select {
-    background-color: transparent;
-    border: none;
-    border-right: 1px solid black;
-    padding-left: 0.5em;
-}
-
-select:focus {
+*:focus {
     outline: none;
 }
