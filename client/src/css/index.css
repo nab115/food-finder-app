@@ -14,12 +14,13 @@ body {
 
 #root {
     height: 100%;
-    --color-theme: rgba(200, 15, 15, 0.888);
+    --color-theme: rgba(189, 15, 15, 0.888);
 
     --color-light: white;
     --color-dark: black;
+    --color-grey: rgb(95, 95, 95);
 
-    --border-color-light: rgba(128, 128, 128, 0.75);
+    --border-color-light: rgba(80, 80, 80, 0.75);
 
     --container-width-s: 350px;
     --container-width-lg: 1024px;
@@ -28,7 +29,7 @@ body {
     --button-width-m: 30px;
 
     --font-size: 18px;
-    --font-size-input-lg: 1em;
+    --font-size-input-lg: 0.9em;
     --font-size-input-sm: 0.8em;
 }
 
@@ -63,11 +64,16 @@ button {
 
     font-family: inherit;
     font-size: inherit;
-    color: var(--color-dark);
+    font-weight: inherit;
+    color: inherit;
 }
 
 button:hover {
     background-color: rgb(231, 229, 229);
+}
+
+a {
+    color: rgb(207, 206, 206);
 }
 
 *:focus {

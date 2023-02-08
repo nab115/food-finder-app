@@ -40,6 +40,7 @@ function SearchPage({ location }) {
             </div>
         </div>
         <Results item={data.searchItem} results={data.results}/>
+        <div className='search-footer'>Created by <a href='https://www.naranbabha.com/'>Naran Babha</a></div>
     </div>
     );
 }
