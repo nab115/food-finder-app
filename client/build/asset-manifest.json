@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.db8f6371.css",
+    "main.js": "/static/js/main.8bb9aadc.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/agio.jpg": "/static/media/agio.105c2d8bfaf03b1a6535.jpg",
+    "static/media/sushi.jpg": "/static/media/sushi.ce40dab1b6c5f5c184d2.jpg",
+    "index.html": "/index.html",
+    "main.db8f6371.css.map": "/static/css/main.db8f6371.css.map",
+    "main.8bb9aadc.js.map": "/static/js/main.8bb9aadc.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db8f6371.css",
+    "static/js/main.8bb9aadc.js"
+  ]
+}
