@@ -1,3 +1,9 @@
+.welcome-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .welcome {
     height: 100%;
     display: flex;
@@ -6,7 +12,7 @@
     background-color: var(--color-theme);
     --font-size-input: var(--font-size-input-lg);
     --input-width: 50%;
-    --input-height: 1.75em;
+    --input-height: 2.5em;
 }
 
 .welcome-image {
@@ -16,12 +22,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     /* display: none; */
-}
-
-@media screen and (max-width: 500px) {
-    .welcome {
-        flex-direction: column;
-    }
 }
 
 .welcome-content {
@@ -40,4 +40,19 @@
 
 .welcome-button {
     width: 15%;
+}
+
+.welcome-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .welcome {
+        flex-direction: column;
+    }
+
+    .welcome-footer {
+        display: none;
+    }
 }

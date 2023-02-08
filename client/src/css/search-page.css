@@ -47,3 +47,12 @@
     max-width: var(--container-width-xlg);
     padding: 1.5rem 1rem;
 }
+
+.search-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color-light);
+    background-color: rgb(250, 246, 240);
+}

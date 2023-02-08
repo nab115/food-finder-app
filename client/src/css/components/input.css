@@ -10,10 +10,12 @@
     width: 50%;
     height: var(--input-height);
     font-size: var(--font-size-input);
+    font-weight: 500;
     background-color: white;
     border: 1px solid var(--border-color-light);
-    border-radius: 15px;
+    border-radius: 1.5em;
     overflow: hidden;
+    color: var(--color-grey);
 }
 
 @media screen and (max-width: 1024px) {
