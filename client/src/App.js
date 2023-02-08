@@ -12,6 +12,9 @@ function App() {
 		window.location.href = '/search';
 	}
 
+    // TODO : if user hits search page directly without having a location saved
+    // in localStorage, re-direct to welcome page
+    
 	return (
 		<Router>
             <Routes>

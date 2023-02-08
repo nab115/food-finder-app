@@ -23,15 +23,28 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 })
 
+// search for specific menu item in a city
 app.post("/search", async (req, res) => {
-  var restaurants = [];
-  const cursor = col.find({'city' : req.body.city});
-  await cursor.forEach((r) => {
-    restaurants.push(r)
-  });
+    var restaurants = [];
+    const cursor = col.find({'city' : req.body.city});
+    await cursor.forEach((r) => {
+        restaurants.push(r)
+    });
 
-  res.json(searchData(req.body.item, restaurants));
+    res.json(searchData(req.body.item, restaurants));
+});
 
+// TODO - only retrieve 20, sorted by rating or avg. price
+
+// retreive all menu items from all restaurants in a city
+app.post("/searchLocation", async (req, res) => {
+    var restaurants = [];
+    const cursor = col.find({'city' : req.body.city});
+    await cursor.forEach((r) => {
+        restaurants.push(r)
+    });
+  
+    res.json(restaurants);
 });
 
 app.post("/locations", async (req, res) => {
