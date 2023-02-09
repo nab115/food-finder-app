@@ -1,45 +1,53 @@
+/* TODO : figure out how to make last row item not expand if row isn't completely
+filled.
+https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
+
 .restaurantCard {
     height: 300px;
-    width : 300px;
+    min-width: 300px;
+    max-width: 100%;
     border: 2px solid black;
     border-radius: 5px;
-    margin: 25px;
-    display: inline-block;
+    margin: 0px 25px 25px 0px;
+    display: block;
+    flex-grow: 1;
+    flex-basis: 0;
     overflow: auto;
     text-align: left;
-  }
+}
   
-  .restaurantHeader {
+.restaurantHeader {
     margin-bottom: 20px;
-  }
+}
   
-  .restaurantCardContent {
+.restaurantCardContent {
     margin: 15px;
-  }
+}
   
-  #restaurants {
-    text-align: center;
+#restaurants {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-  }
+}
   
-  .item {
+.item {
     box-shadow: 0px -1px 0 #000;
     padding-top: 10px;
-  }
+}
   
-  .itemName {
+.itemName {
     text-align: left;
     width: 80%;
     display: inline-block;
-  }
+}
   
-  .itemPrice {
+.itemPrice {
     text-align: right;
     width: 20%;
     display: inline-block;
-  }
+}
   
-  .itemDescription {
+.itemDescription {
     width: 100%;
     font-style: italic;
-  }
+}
