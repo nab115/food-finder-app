@@ -11,15 +11,21 @@ https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
     margin-right: 25px;
     margin-bottom: 25px;
     display: block;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 0 0 30%;
     overflow: auto;
     text-align: left;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     .restaurantCard {
         margin-right: 0;
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .restaurantCard {
+        flex: 0 0 40%;
     }
 }
   

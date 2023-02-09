@@ -45,7 +45,7 @@
     margin: auto;
     width: 100%;
     max-width: var(--container-width-xlg);
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
 }
 
 .search-footer {
