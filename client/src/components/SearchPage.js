@@ -43,7 +43,7 @@ function SearchPage({ location }) {
     const updateLocation = async (input) => {
         const popular = await searchLocation(input);
         localStorage.setItem("location", input);
-        update({...data, popular: popular, location: input, trigger: 0})
+        update({...data, searchItem: '', popular: popular, location: input, trigger: 0})
     }
 
     // TODO : this logic results in localStorage being set twice on initial 
