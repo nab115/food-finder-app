@@ -8,12 +8,36 @@ https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
     max-width: 100%;
     border: 2px solid black;
     border-radius: 5px;
-    margin: 0px 25px 25px 0px;
+    margin-right: 25px;
+    margin-bottom: 25px;
     display: block;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 0 0 calc((100% - 50px) / 3.0);
     overflow: auto;
     text-align: left;
+    box-sizing: border-box;
+}
+
+.restaurantCard:nth-child(3n) {
+    margin-right: 0;
+}
+
+/* one card per row */
+@media screen and (max-width: 700px) {
+    .restaurantCard {
+        margin-right: 0;
+        flex: 0 0 100%;
+    }
+}
+
+/* two cards per row */
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .restaurantCard {
+        flex: 0 0 calc((100% - 25px) / 2.0);
+    }
+    
+    .restaurantCard:nth-child(2n) {
+        margin-right: 0;
+    }
 }
   
 .restaurantHeader {

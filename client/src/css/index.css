@@ -23,6 +23,7 @@ body {
     --border-color-light: rgba(80, 80, 80, 0.75);
 
     --container-width-s: 350px;
+    --container-width-m: 624px;
     --container-width-lg: 1024px;
     --container-width-xlg: 1280px;
 
@@ -73,9 +74,17 @@ button:hover {
 }
 
 a {
-    color: rgb(207, 206, 206);
+    color: rgb(194, 194, 194);
 }
 
 *:focus {
     outline: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
 }
