@@ -60,16 +60,20 @@ function SearchPage({ location }) {
     return (
     <div className='search'>
         <div className='header'>
-            <div className='input-container'>
-                <form onSubmit={submitHandler} autoComplete="off" className="form-container">
-                    <span className='search-dropdown'>
-                        <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
-                    </span>
-                    <span className='search-input'>
-                        <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
-                    </span>
-                    <button type='submit' className='search-button'>Go</button>
-                </form>
+            <div className='header-content'>
+                <h2 className='logo'>menuMonster</h2>
+                <div className='flex-space'></div>
+                <div className='input-container'>
+                    <form onSubmit={submitHandler} autoComplete="off" className="form-container">
+                        <span className='search-dropdown'>
+                            <Dropdown inputHandler={updateLocation} selected={location} placeholder='update your location'/>
+                        </span>
+                        <span className='search-input'>
+                            <SearchBar inputHandler={updateItem} placeholder="Find something tasty" trigger={data.trigger}/>
+                        </span>
+                        <button type='submit' className='search-button'>Go</button>
+                    </form>
+                </div>
             </div>
         </div>
         <Results item={data.searchItem} location={data.location} results={data.results} popular={data.popular}/>

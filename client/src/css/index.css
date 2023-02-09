@@ -23,6 +23,7 @@ body {
     --border-color-light: rgba(80, 80, 80, 0.75);
 
     --container-width-s: 350px;
+    --container-width-m: 624px;
     --container-width-lg: 1024px;
     --container-width-xlg: 1280px;
 
