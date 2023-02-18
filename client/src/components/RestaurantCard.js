@@ -15,10 +15,17 @@ function RestaurantCard({restaurant}) {
   }
   
 function Item({item}) {
+    let price = null
+
+    try{
+        price = item.price.toFixed(2);
+    } catch(error) {
+
+    }
     return (
         <div className="item">
         <span className="itemName">{item.name}</span>
-        <span className="itemPrice"><span>${item.price.toFixed(2)}</span></span>
+        <span className="itemPrice"><span>{price}</span></span>
         <p className="itemDescription">{item.description}</p>
         </div>
     )
