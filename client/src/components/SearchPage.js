@@ -3,7 +3,7 @@ import React, {useState, Fragment, useEffect} from 'react';
 import { search, searchLocation } from '../request.js';
 import SearchBar from "./SearchBar";
 import Dropdown from "./Dropdown";
-import Results from './Results.js';
+import RestaurantCard from "./RestaurantCard";
 import Nav from './Nav.js';
 
 function SearchPage({ location }) {
@@ -78,10 +78,49 @@ function SearchPage({ location }) {
                     </div>
                 </div>
         </div>
-        <Results item={data.searchItem} location={data.location} results={data.results} popular={data.popular}/>
+        <div className='content-container padded'>
+            <SearchResults item={data.searchItem} location={data.location} results={data.results} popular={data.popular}/>
+        </div>
         <div className='search-footer'>Created by <a href='https://www.naranbabha.com/'>Naran Babha</a></div>
     </div>
     );
 }
+
+
+function SearchResults({item, location, results, popular}) {
+
+    if (!item) return (
+    <Fragment>
+        <p>Popular restaurants near <span className='italic'>{location}</span></p>
+        <div className="search-results ">
+          {popular.map(restaurant => <RestaurantCard restaurant={restaurant} />)}
+        </div>
+    </Fragment>
+    );
+  
+    else if (results.length === 0) {
+      return (
+        <Fragment>
+          <p>No results found for <span className='bold'>{item}</span> near <span className='italic'>{location}</span>
+          <br></br>
+          Note : this application is still in development, and is using very limited test data.
+          To view some results, try selecting "Seattle, WA" and searching "pizza" or "sandwich"
+          </p>
+        </Fragment>
+      );
+    }
+  
+    else {
+      return (
+        <Fragment>
+          <p>Showing results for <span className='bold'>{item}</span> near <span className='italic'>{location}</span></p>
+          <div className="search-results ">
+          {results.map(restaurant => <RestaurantCard restaurant={restaurant} />)}
+          </div>
+        </Fragment>
+      );
+    }
+}
+
 
 export default SearchPage;

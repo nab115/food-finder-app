@@ -36,14 +36,6 @@ body {
     --font-size-input-sm: 0.8em;
 }
 
-@media screen and (max-width: 500px) {
-    #root {
-        --font-size: 16px;
-        --font-size-input-lg: 1.25em;
-        --font-size-input-sm: 1em;
-    }
-}
-
 h1 {
     font-size: 4em;
     margin: 0;
@@ -103,3 +95,15 @@ a {
 }
 
 .padded { padding: 1.5rem 1rem; }
+
+@media screen and (max-width: 500px) {
+    #root {
+        --font-size: 16px;
+        --font-size-input-lg: 1.25em;
+        --font-size-input-sm: 1em;
+    }
+
+    .padded {
+        padding: 1.5rem 2rem;
+    }
+}

@@ -45,9 +45,7 @@ function MenuScraperPage() {
                         <span className="url-input">
                                 <SearchBar inputHandler={inputHandler}/>
                         </span>
-                        <button className="scraper-btn">
-                            Try it
-                        </button>
+                        <button className="scraper-btn">Go</button>
                     </form>
                     <Preview status={data.status} restaurant={data.restaurant}/>
                 </div>

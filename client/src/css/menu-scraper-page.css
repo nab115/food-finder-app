@@ -3,7 +3,7 @@
     background-color: var(--background-color-secondary);
     min-height: 100%;
     --input-height: 2.5em;
-    --font-size-input: var(--font-size-input-lg);
+    --font-size-input: var(--font-size-input-sm);
     font-size: var(--font-size);
 }
 .scraper-header{
@@ -30,5 +30,11 @@
 .scraper-preview {
     margin: auto;
     margin-top: 25px;
-    width: 80%;
+    max-width: 80%;
+}
+
+@media screen and (max-width: 500px) {
+    .scraper-preview {
+        max-width: 100%;
+    }
 }
