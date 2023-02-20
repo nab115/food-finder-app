@@ -6,14 +6,18 @@ import { scrapeMenu } from '../request.js';
 
 function MenuScraperPage() {
 
-    const [data, update] = useState({restaurant: null, url: '', status: -1});
+    const [data, update] = useState({restaurant: null, url: '', status: 0});
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        update({...data, status: 0});
+        update({...data, status: 1});
         const result = await scrapeMenu(data.url)
-        console.log(result)
-        update({restaurant: result, url: '', status: 1});
+        if (result == null ) {
+            update({...data, status: -1});
+        }
+        else {
+            update({...data, restaurant: result, status: 2});
+        }
     }
 
     const inputHandler = (input) => {
@@ -56,18 +60,24 @@ function MenuScraperPage() {
 }
 
 function Preview({status, restaurant}) {
-    if(status == -1){
+    if(status == 0){
         return <div></div>
     }
-    else if (status == 0){
+    else if (status == 1){
         return <div>Loading - this will take a few seconds.</div>
     }
-    else {
+    else if (status == 2){
         return (
             <div className="scraper-preview">
                 <RestaurantCard restaurant={restaurant}/>
             </div>
         )
+    }
+    else if (status == -1) {
+        return <div>Error - could not parse menu from given URL</div>
+    }
+    else {
+        return <div></div>
     }
 }
 

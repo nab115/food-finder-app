@@ -40,14 +40,8 @@ export async function scrapeMenu(url) {
         },
         body: JSON.stringify({url: url}),
     })
+    if(!res.ok) {
+        return null;
+    }
     return res.json();
 }
-
-
-// unsure why the above works but this does not
-
-// async function search() {
-
-//     fetch('/search')
-//         .then((res) => {return res.json()});
-// }

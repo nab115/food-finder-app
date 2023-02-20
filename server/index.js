@@ -77,6 +77,9 @@ app.post("/scraper", async (req, res) => {
         }
     }).then((response) => {
         res.json(response.data);
+    }).catch((error) => {
+        console.log(error)
+        res.status(400).end();
     })
 });
 
