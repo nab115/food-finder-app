@@ -12,18 +12,13 @@
 }
 
 .header-content {
-    box-sizing: border-box;
-    margin: auto;
-    width: 100%;
-    max-width: var(--container-width-xlg);
-    padding: 1.5rem 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .logo {
-    color: var(--color-theme);
+    color: var(--background-color-theme);
 }
 
 .flex-space {
@@ -51,10 +46,6 @@
 }
 
 #results {
-    box-sizing: border-box;
-    margin: auto;
-    width: 100%;
-    max-width: var(--container-width-xlg);
     padding: 1.5rem 1rem;
 }
 

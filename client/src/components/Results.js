@@ -4,7 +4,7 @@ import RestaurantCard from "./RestaurantCard";
 function Results({item, location, results, popular}) {
 
     if (!item) return (
-    <div id="results">
+    <div id="results" className="content-container padded">
         <p>Popular restaurants near <span className='italic'>{location}</span></p>
         <div id="restaurants">
           {popular.map(restaurant => <RestaurantCard restaurant={restaurant} />)}

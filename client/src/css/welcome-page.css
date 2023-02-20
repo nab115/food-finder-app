@@ -9,7 +9,7 @@
     display: flex;
     font-size: var(--font-size);
     color: var(--color-light);
-    background-color: var(--color-theme);
+    background-color: var(--background-color-theme);
     --font-size-input: var(--font-size-input-lg);
     --input-height: 2.5em;
 }

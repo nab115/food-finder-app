@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import SearchPage from "./components/SearchPage.js"
 import WelcomePage from "./components/WelcomePage";
+import MenuScraperPage from "./components/MenuScraperPage.js";
 
 function App() {
 
@@ -25,6 +26,10 @@ function App() {
                 <Route 
                     path="/search" 
                     element={<SearchPage location={location}/>}>
+                </Route>
+                <Route 
+                    path="/scraper" 
+                    element={<MenuScraperPage/>}>
                 </Route>
             </Routes>
 		</Router>

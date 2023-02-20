@@ -14,12 +14,13 @@ body {
 
 #root {
     height: 100%;
-    --color-theme: rgba(189, 15, 15, 0.888);
+    --background-color-theme: rgba(189, 15, 15, 0.888);
     --background-color-secondary: rgb(250, 246, 240);
 
     --color-light: white;
     --color-dark: black;
     --color-grey: rgb(95, 95, 95);
+    --color-light-grey: rgb(194, 194, 194);
 
     --border-color-light: rgba(80, 80, 80, 0.75);
 
@@ -75,7 +76,11 @@ button:hover {
 }
 
 a {
-    color: rgb(194, 194, 194);
+    color: inherit;
+}
+
+.no-dec {
+    text-decoration: none;
 }
 
 *:focus {
@@ -89,3 +94,12 @@ a {
 .italic {
     font-style: italic;
 }
+
+.content-container {
+    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+    max-width: var(--container-width-xlg);
+}
+
+.padded { padding: 1.5rem 1rem; }

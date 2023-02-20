@@ -65,6 +65,21 @@ app.post("/locations", async (req, res) => {
     })
 });
 
+app.post("/scraper", async (req, res) => {
+    axios.post(
+        api_url + '/scraper'
+        , {
+            url: req.body.url
+        }
+        , {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response) => {
+        res.json(response.data);
+    })
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 })

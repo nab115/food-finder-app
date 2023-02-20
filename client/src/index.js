@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './css/index.css';
 import './css/welcome-page.css';
 import './css/search-page.css';
+import './css/menu-scraper-page.css';
 import './css/components/dropdown.css';
 import './css/components/searchbar.css';
 import './css/components/restaurant-card.css';
 import './css/components/input.css';
+import './css/components/nav.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

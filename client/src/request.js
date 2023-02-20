@@ -31,6 +31,18 @@ export async function retreiveLocations() {
     return res.json();
 }
 
+export async function scrapeMenu(url) {
+
+    const res = await fetch('scraper', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({url: url}),
+    })
+    return res.json();
+}
+
 
 // unsure why the above works but this does not
 
