@@ -1,0 +1,86 @@
+/* TODO : figure out how to make last row item not expand if row isn't completely
+filled.
+https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
+
+.rest-card {
+    height: 350px;
+    min-width: 300px;
+    max-width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+/* three cards per row */
+@media screen and (min-width: 1000px){
+    .rest-card {
+        flex: 0 0 calc((100% - 50px) / 3.0);
+    }
+    
+    .rest-card:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+/* two cards per row */
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .rest-card {
+        flex: 0 0 calc((100% - 25px) / 2.0);
+    }
+    
+    .rest-card:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+/* one card per row */
+@media screen and (max-width: 700px) {
+    .rest-card {
+        margin-right: 0;
+        flex: 0 0 100%;
+    }
+}
+  
+.rest-header {
+    background-color: var(--background-color-secondary);
+    padding: 15px;
+}
+
+.rest-items {
+    padding: 15px;
+    overflow-y: auto;
+}
+  
+#restaurants {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.item {
+    box-shadow: 0px -1px 0 #000;
+    padding-top: 10px;
+}
+  
+.item-name {
+    text-align: left;
+    width: 80%;
+    display: inline-block;
+}
+  
+.item-price {
+    text-align: right;
+    width: 20%;
+    display: inline-block;
+}
+  
+.item-desc {
+    width: 100%;
+    font-style: italic;
+}

@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+    height: 100%;
+    --color-theme: rgba(189, 15, 15, 0.888);
+    --background-color-secondary: rgb(250, 246, 240);
+
+    --color-light: white;
+    --color-dark: black;
+    --color-grey: rgb(95, 95, 95);
+
+    --border-color-light: rgba(80, 80, 80, 0.75);
+
+    --container-width-s: 350px;
+    --container-width-m: 624px;
+    --container-width-lg: 1024px;
+    --container-width-xlg: 1280px;
+
+    --button-width-m: 30px;
+
+    --font-size: 18px;
+    --font-size-input-lg: 0.9em;
+    --font-size-input-sm: 0.8em;
+}
+
+@media screen and (max-width: 500px) {
+    #root {
+        --font-size: 16px;
+        --font-size-input-lg: 1.25em;
+        --font-size-input-sm: 1em;
+    }
+}
+
+h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+button {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    vertical-align: top;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+button:hover {
+    background-color: rgb(231, 229, 229);
+}
+
+a {
+    color: rgb(194, 194, 194);
+}
+
+*:focus {
+    outline: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}

@@ -1,36 +1,68 @@
 const express = require('express');
+const axios = require('axios');
+
 const path = require('path');
-const {searchData} = require('./parser.js');
-const app = express();
+
 const port = process.env.PORT || 3001;
 
-const { MongoClient } = require("mongodb");
-const uri = "mongodb+srv://naranbabha:kIIsQuR1FBhqAO8v@menuitems.wdbco70.mongodb.net/?retryWrites=true&w=majority";
+if (process.env.NODE_ENV === 'development') api_url = 'http://localhost:5000'
+else api_url = 'https://menu-monster-api-production.up.railway.app'
 
-const client = new MongoClient(uri);
-const dbName = "Restaurants";
-const db = client.db(dbName);
-const col = db.collection("restaurants");
+const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
-app.get('/', (req, res) => {
+
+// using '*' to route any unhandled requests back to the frontend router
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 })
 
-app.post("/search", async (req, res) => {
-  var restaurants = [];
-  await client.connect();
-  const cursor = col.find({'city' : req.body.city});
-  await cursor.forEach((r) => {
-    restaurants.push(r)
-  });
-  
-  console.log(restaurants);
-  res.json(searchData(req.body.item, restaurants));
+app.post("/search", (req, res) => {
+    axios.post(
+        api_url + '/itemsearch'
+        , {
+            city: req.body.city
+            , item: req.body.item
+        }
+        , {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response) => {
+        res.json(response.data);
+    })
+});
 
+app.post("/searchLocation", async (req, res) => {
+    axios.post(
+        api_url + '/locationsearch'
+        , {
+            city: req.body.city
+        }
+        , {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response) => {
+        res.json(response.data);
+    })
+});
+
+app.post("/locations", async (req, res) => {
+  axios.get(api_url + '/locations')
+  .then((response) => {
+        data = []
+        response.data.forEach((loc) => {
+            data.push({
+                value: loc
+                , display: loc
+            })
+        })
+        res.json(data);
+    })
 });
 
 app.listen(port, () => {

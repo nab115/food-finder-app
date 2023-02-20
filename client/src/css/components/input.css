@@ -1,0 +1,17 @@
+.input-container {
+    box-sizing: border-box;
+    min-width: 300px;
+    width: var(--container-width-m);
+}
+
+.form-container {
+    width: 100%;
+    height: var(--input-height);
+    font-size: var(--font-size-input);
+    font-weight: 500;
+    background-color: white;
+    border: 1px solid var(--border-color-light);
+    border-radius: 1.5em;
+    overflow: hidden;
+    color: var(--color-grey);
+}

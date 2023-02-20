@@ -1,28 +1,29 @@
 {
-  "name": "food-finder-app",
+  "name": "menu-monster",
   "version": "1.0.0",
   "description": "Web application for finding specific food items near your location",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nab115/food-finder-app.git"
+    "url": "git+https://github.com/nab115/menu-monster.git"
   },
   "author": "Naran Babha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nab115/food-finder-app/issues"
+    "url": "https://github.com/nab115/menu-monster/issues"
   },
-  "homepage": "https://github.com/nab115/food-finder-app#readme",
+  "homepage": "https://github.com/nab115/menu-monster#readme",
   "dependencies": {
+    "-": "^0.0.1",
+    "axios": "^1.3.3",
     "express": "^4.18.2",
-    "mongodb": "^4.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   }
