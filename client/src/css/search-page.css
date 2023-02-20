@@ -4,7 +4,7 @@
 }
 
 .header {
-    background-color: rgb(250, 246, 240);
+    background-color: var(--background-color-secondary);
     --font-size-input: var(--font-size-input-sm);
     --input-height: 2.5em;
     position: relative;

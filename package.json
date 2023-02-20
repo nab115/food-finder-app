@@ -1,5 +1,5 @@
 {
-  "name": "food-finder-app",
+  "name": "menu-monster",
   "version": "1.0.0",
   "description": "Web application for finding specific food items near your location",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nab115/food-finder-app.git"
+    "url": "git+https://github.com/nab115/menu-monster.git"
   },
   "author": "Naran Babha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nab115/food-finder-app/issues"
+    "url": "https://github.com/nab115/menu-monster/issues"
   },
-  "homepage": "https://github.com/nab115/food-finder-app#readme",
+  "homepage": "https://github.com/nab115/menu-monster#readme",
   "dependencies": {
     "-": "^0.0.1",
     "express": "^4.18.2",
