@@ -2,7 +2,7 @@
 filled.
 https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
 
-.restaurantCard {
+.rest-card {
     height: 350px;
     min-width: 300px;
     max-width: 100%;
@@ -19,40 +19,40 @@ https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
 
 /* three cards per row */
 @media screen and (min-width: 1000px){
-    .restaurantCard {
+    .rest-card {
         flex: 0 0 calc((100% - 50px) / 3.0);
     }
     
-    .restaurantCard:nth-child(3n) {
+    .rest-card:nth-child(3n) {
         margin-right: 0;
     }
 }
 
 /* two cards per row */
 @media screen and (min-width: 700px) and (max-width: 1000px) {
-    .restaurantCard {
+    .rest-card {
         flex: 0 0 calc((100% - 25px) / 2.0);
     }
     
-    .restaurantCard:nth-child(2n) {
+    .rest-card:nth-child(2n) {
         margin-right: 0;
     }
 }
 
 /* one card per row */
 @media screen and (max-width: 700px) {
-    .restaurantCard {
+    .rest-card {
         margin-right: 0;
         flex: 0 0 100%;
     }
 }
   
-.restaurantHeader {
+.rest-header {
     background-color: var(--background-color-secondary);
     padding: 15px;
 }
 
-.restaurantItems {
+.rest-items {
     padding: 15px;
     overflow-y: auto;
 }
@@ -68,19 +68,19 @@ https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid */
     padding-top: 10px;
 }
   
-.itemName {
+.item-name {
     text-align: left;
     width: 80%;
     display: inline-block;
 }
   
-.itemPrice {
+.item-price {
     text-align: right;
     width: 20%;
     display: inline-block;
 }
   
-.itemDescription {
+.item-desc {
     width: 100%;
     font-style: italic;
 }
