@@ -18,7 +18,9 @@ class Dropdown extends React.Component {
   }
 
   async componentDidMount() {
-    this.setState({options: await retreiveLocations()});
+    const locs = await retreiveLocations();
+    console.log(locs)
+    this.setState({options: locs});
   }
 
   render () {
