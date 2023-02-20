@@ -15,6 +15,7 @@ body {
 #root {
     height: 100%;
     --color-theme: rgba(189, 15, 15, 0.888);
+    --background-color-secondary: rgb(250, 246, 240);
 
     --color-light: white;
     --color-dark: black;
