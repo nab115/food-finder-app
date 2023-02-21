@@ -1,5 +1,4 @@
 .scraper {
-    font-size: var(--font-size);
     background-color: var(--background-color-secondary);
     min-height: 100%;
     --input-height: 2.5em;
@@ -16,6 +15,20 @@
     max-width: var(--container-width-m);
     margin: auto;
 }
+
+.scraper-desc {
+    position: relative;
+}
+
+.copy-container {
+    position: relative;
+}
+
+.alert {
+    position: absolute;
+    bottom: calc(var(--font-size) * -1);
+    left: 0;
+}
 .url-input {
     width: 90%;
     height: 100%;
@@ -31,6 +44,26 @@
     margin: auto;
     margin-top: 25px;
     max-width: 80%;
+}
+
+.copy-btn {
+    vertical-align: baseline;
+    margin-left: 10px;
+    min-width: var(--font-size);
+    min-height: var(--font-size);
+    color: rgb(231, 229, 229);
+    background: url('../../../public/copy_icon.png');
+    background-repeat: no-repeat;
+    /* background-position: 5px 50%; */
+    background-size: var(--font-size), auto, contain;
+    border: 2px solid rgb(65, 65, 65);
+    display: inline-block;
+    position: relative;
+}
+
+.copy-btn:hover {
+    cursor: pointer;
+    border: 2px solid grey;
 }
 
 @media screen and (max-width: 500px) {

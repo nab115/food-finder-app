@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/index.css';
-import './css/welcome-page.css';
-import './css/search-page.css';
-import './css/menu-scraper-page.css';
-import './css/components/dropdown.css';
-import './css/components/searchbar.css';
-import './css/components/restaurant-card.css';
-import './css/components/input.css';
-import './css/components/nav.css';
+import './index.css';
+import './components/css/welcome-page.css';
+import './components/css/search-page.css';
+import './components/css/menu-scraper-page.css';
+import './components/css/dropdown.css';
+import './components/css/searchbar.css';
+import './components/css/restaurant-card.css';
+import './components/css/input.css';
+import './components/css/nav.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

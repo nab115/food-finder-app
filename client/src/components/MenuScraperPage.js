@@ -2,15 +2,18 @@ import React, {useState} from "react";
 import Nav from './Nav.js';
 import SearchBar from './SearchBar.js'
 import RestaurantCard from './RestaurantCard.js'
+import CopyButton from "./CopyButton.js";
 import { scrapeMenu } from '../request.js';
 
 function MenuScraperPage() {
 
-    const [data, update] = useState({restaurant: null, url: '', status: 0});
+    const [data, update] = useState({restaurant: null, url: '', status: 0, trigger: 0});
+
+    const example_link = 'https://www.elmoose.com/dinner';
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        update({...data, status: 1});
+        update({...data, status: 1, trigger: -1});
         const result = await scrapeMenu(data.url)
         if (result == null ) {
             update({...data, status: -1});
@@ -21,8 +24,7 @@ function MenuScraperPage() {
     }
 
     const inputHandler = (input) => {
-        console.log(input)
-        update({...data, url: input})
+        update({...data, url: input, trigger: 0})
     }
     
     return (
@@ -31,7 +33,7 @@ function MenuScraperPage() {
             <div className='scraper-header content-container padded'>
                 <h2>Menu Scraper</h2>
                 <div className="scraper-body">
-                    <p>
+                    <p className="scraper-desc">
                         This page allows you to try out my custom-built
                         restaurant menu scraper. Currently, menu-scraper
                         is capable of automatically extracting item name,
@@ -41,13 +43,16 @@ function MenuScraperPage() {
                         <br></br>
                         <br></br>
                         If you have the URL of an HTML menu, enter it below and
-                        see if menu scraper is able to correctly parse the menu! 
+                        see if menu scraper is able to correctly parse the menu!
                         If you want an example of an HTML menu my tool works on, try 
-                        <span className="bold"> https://www.elmoose.com/dinner</span>
+                        <tt className="bold"> {example_link}
+                            <CopyButton text={example_link}/>
+                        </tt>
+                        
                     </p>
                     <form onSubmit={submitHandler} autoComplete="off" className="form-container">
                         <span className="url-input">
-                                <SearchBar inputHandler={inputHandler}/>
+                                <SearchBar inputHandler={inputHandler} trigger={data.trigger}/>
                         </span>
                         <button className="scraper-btn">Go</button>
                     </form>

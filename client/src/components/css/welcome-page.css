@@ -3,8 +3,8 @@
     box-sizing: border-box;
     padding-top: 20vh;
     font-size: var(--font-size);
-    color: var(--color-light);
-    background-color: var(--background-color-theme);
+    color: var(--color-dark);
+    background-color: var(--background-color-secondary);
     --font-size-input: var(--font-size-input-lg);
     --input-height: 2.5em;
 }
